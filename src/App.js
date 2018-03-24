@@ -5,8 +5,7 @@ import './App.css';
 import { actionAddCount } from './CountStore';
 
 const mapStateToProps = (state) => ({
-  countReducer: state.countReducer,
-  currentLoadingState: state.loading
+  countReducer: state.countReducer
 });
 
 const mapActionsToProps = {
