@@ -7,7 +7,7 @@ import promiseMiddleware from 'redux-promise-middleware';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { countReducer } from './CountStore';
+import { countReducer } from './ajaxStore';
 
 const store = createStore(
   combineReducers({ countReducer }),

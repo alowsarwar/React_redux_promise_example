@@ -1,24 +1,24 @@
 import typeToReducer from 'type-to-reducer';
-export const ADDCOUNT = 'ADDCOUNT';
+export const AJAX_CALL = 'AJAX_CALL';
 
 const initState = {
-  count: 0,
+  ajaxResponse: null,
   loading: false
 };
 
-export const actionAddCount = () => {
+export const actionAJAX_CALL = () => {
   return {
-    type: ADDCOUNT,
+    type: AJAX_CALL,
     payload: new Promise((resolve, reject) => {
-  	let wait = setTimeout(() => {
-    resolve('Dummy Ajax Response');
-  }, 4000)
-}),
+                let wait = setTimeout(() => {
+                resolve('Dummy Ajax Response');
+              }, 2000)
+    }),
   };
 };
 
 export const countReducer = typeToReducer({
-  [ADDCOUNT]: {
+  [AJAX_CALL]: {
     PENDING: (state, action) => ({
       ...state,
       loading: true,
@@ -28,7 +28,6 @@ export const countReducer = typeToReducer({
       loading: false,
     }),
     FULFILLED: (state, action) => ({
-      count: state.count + 1,
       loading: false,
       ajaxResponse: action.payload,
     })

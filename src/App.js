@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
-import { actionAddCount } from './CountStore';
+import { actionAJAX_CALL } from './ajaxStore';
 
 const mapStateToProps = (state) => ({
   countReducer: state.countReducer
 });
 
 const mapActionsToProps = {
-  actionAddCount
+  actionAJAX_CALL
 };
 
 const returnContent = currentProps => {
@@ -24,8 +24,7 @@ const returnContent = currentProps => {
         </p>
         {currentProps.countReducer.loading ? <p>Loading....</p> :
          <div>{currentProps.countReducer.ajaxResponse}</div>}
-        <button onClick={currentProps.actionAddCount}>clickme</button>
-        
+        <button onClick={currentProps.actionAJAX_CALL}>clickme</button>
       </div>
     )
 }
