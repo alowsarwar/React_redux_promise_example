@@ -11,7 +11,7 @@ import { countReducer } from './CountStore';
 
 const store = createStore(
   combineReducers({ countReducer }),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  {},
   applyMiddleware(promiseMiddleware(), logger),
 );
 const app = (
